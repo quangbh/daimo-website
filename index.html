@@ -5,51 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAIMO Tile Leveling System</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
-        .container { width: 80%; margin: auto; padding: 20px; }
-        .hero { background: #f4f4f4; padding: 50px; }
-        .btn { display: inline-block; padding: 10px 20px; background: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; }
-        .section { padding: 40px 20px; }
-        .comparison-table { width: 100%; max-width: 600px; margin: auto; border-collapse: collapse; }
-        .comparison-table th, .comparison-table td { border: 1px solid #ddd; padding: 10px; }
-        .footer { background: #222; color: #fff; padding: 20px; margin-top: 20px; }
-        img { max-width: 100%; height: auto; margin: 10px 0; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin-top: 20px; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ff6600;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .sticky-nav .btn {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+        .hero {
+            padding-top: 80px; /* Prevents overlap from sticky nav */
+            background: #f4f4f4;
+            padding-bottom: 40px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #ff6600;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .comparison-table {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .feature-box {
+            width: 45%;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .review-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .review-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .review {
+            flex: 0 0 80%;
+            scroll-snap-align: start;
+            padding: 15px;
+            background: #fff3e0;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        @media (max-width: 600px) {
+            .sticky-nav {
+                flex-direction: column;
+            }
+            .sticky-nav .btn {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <div class="sticky-nav">
+        <a href="#features" class="btn">Why DAIMO?</a>
+        <a href="#video" class="btn">How It Works</a>
+        <a href="#reviews" class="btn">Reviews</a>
+        <a href="https://www.amazon.com/Tile-Leveling-System-Kit-Installation/dp/B0DHXB27V9" class="btn">Buy Now</a>
+    </div>
+
     <div class="hero">
         <h1>DAIMO Tile Leveling System</h1>
-        <p>Achieve flawless tile installation with ease!</p>
-        <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B1.jpg" alt="DAIMO Tile Leveling System">
+        <p>Flawless Tile Installation Made Easy!</p>
         <a href="https://www.amazon.com/Tile-Leveling-System-Kit-Installation/dp/B0DHXB27V9" class="btn">Buy Now on Amazon</a>
     </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section" id="features">
             <h2>Why Choose DAIMO?</h2>
-            <ul>
-                <li>✔ Prevents lippage and uneven tiles</li>
-                <li>✔ Reusable wedges for cost savings</li>
-                <li>✔ Easy to use for DIYers & professionals</li>
-                <li>✔ Works with floor and wall tiles</li>
-            </ul>
+            <div class="features-container">
+                <div class="feature-box">✔ Prevents lippage and uneven tiles</div>
+                <div class="feature-box">✔ Reusable wedges for cost savings</div>
+                <div class="feature-box">✔ Easy to use for DIYers & professionals</div>
+                <div class="feature-box">✔ Works with floor and wall tiles</div>
+            </div>
             <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B2.jpg" alt="DAIMO Features">
         </div>
 
-        <div class="section">
+        <div class="section" id="video">
             <h2>How It Works</h2>
-            <p>1️⃣ Insert Clip | 2️⃣ Slide in Wedge | 3️⃣ Tighten & Level | 4️⃣ Remove After Setting</p>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/hNUuHVhB554?autoplay=1&loop=1&playlist=hNUuHVhB554&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/hNUuHVhB554?autoplay=1&loop=1&playlist=hNUuHVhB554&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="reviews">
             <h2>Customer Reviews</h2>
-            <p>⭐️⭐️⭐️⭐️⭐️ “This system saved me so much time and effort!” – Mark D.</p>
-            <p>⭐️⭐️⭐️⭐️⭐️ “First-time DIYer and my tiles look perfect!” – Sarah L.</p>
+            <div class="review-slider">
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "This system saved me so much time and effort!" - Mark D.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "Perfect for DIYers, my tiles are perfectly level!" - Sarah L.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "Super easy to use and reuse! Love it!" - Emma W.</div>
+                <div class="review">⭐️⭐️⭐️⭐️ "Good system, but took me a while to get used to it." - James K.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "Highly recommended for professionals and beginners!" - Olivia M.</div>
+                <div class="review">⭐️⭐️⭐️⭐️ "Works well, but I wish there were more clips in the pack." - Kevin R.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "Great value for money. Will buy again!" - Sophia C.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "My tiles look amazing thanks to DAIMO!" - Laura J.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "No more uneven tiles, thanks to this system!" - Rachel S.</div>
+                <div class="review">⭐️⭐️⭐️⭐️⭐️ "A must-have for every tiling project!" - Peter V.</div>
+            </div>
         </div>
 
         <div class="section">
@@ -79,16 +209,7 @@
         </div>
 
         <div class="section">
-            <h2>DAIMO A+ Features</h2>
-            <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B3.jpg" alt="Feature 1">
-            <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B4.jpg" alt="Feature 2">
-            <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B5.jpg" alt="Feature 3">
-            <img src="https://raw.githubusercontent.com/quangbh/daimo-website/main/A%2B6.jpg" alt="Feature 4">
-        </div>
-
-        <div class="section">
             <h2>Tile Installation Tips & Guides</h2>
-            <p>Stay updated with expert advice, step-by-step guides, and tips on achieving the perfect tile installation.</p>
             <a href="blog.html" class="btn">Visit Our Blog</a>
         </div>
     </div>
@@ -96,5 +217,6 @@
     <div class="footer">
         <p>&copy; 2025 DAIMO Tile Leveling System | <a href="https://www.amazon.com/Tile-Leveling-System-Kit-Installation/dp/B0DHXB27V9" class="btn">Buy Now</a></p>
     </div>
+
 </body>
 </html>
